@@ -1,13 +1,26 @@
+<!DOCTYPE html>
 <html lang="en" data-arp-injected="true">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlimsOnline – Online Quran Tutor</title>
 
-    <meta charset="utf-8">
-    <title>Qari.io</title>
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300,400,500&display=swap');
+
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+    </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -17,1366 +30,581 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <script src="https://js.stripe.com/v3/"></script>
-
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GXSCLN6VRX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-GXSCLN6VRX');
-    </script>
-    <!--End Global site tag (gtag.js) - Google Analytics -->
-
-    <!-- Meta Pixel Code -->
-    <script>
-        ! function (f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1329567327891020');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1329567327891020&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <style>
-        @charset "UTF-8";
-
-        .mat-typography {
-            font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
-            letter-spacing: normal
-        }
-
-        body,
-        html {
-            height: 100%
-        }
-
-        body {
-            font-family: Raleway !important
-        }
-
-        :root {
-            --blue: #007bff;
-            --indigo: #6610f2;
-            --purple: #6f42c1;
-            --pink: #e83e8c;
-            --red: #dc3545;
-            --orange: #fd7e14;
-            --yellow: #ffc107;
-            --green: #28a745;
-            --teal: #20c997;
-            --cyan: #17a2b8;
-            --white: #fff;
-            --gray: #6c757d;
-            --gray-dark: #343a40;
-            --primary: #007bff;
-            --secondary: #6c757d;
-            --success: #28a745;
-            --info: #17a2b8;
-            --warning: #ffc107;
-            --danger: #dc3545;
-            --light: #f8f9fa;
-            --dark: #343a40;
-            --breakpoint-xs: 0;
-            --breakpoint-sm: 576px;
-            --breakpoint-md: 768px;
-            --breakpoint-lg: 992px;
-            --breakpoint-xl: 1200px;
-            --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
-        }
-
-        *,
-        :after,
-        :before {
-            box-sizing: border-box
-        }
-
-        html {
-            font-family: sans-serif;
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
-        }
-
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            text-align: left;
-            background-color: #fff
-        }
-
-        @media print {
-
-            *,
-            :after,
-            :before {
-                text-shadow: none !important;
-                box-shadow: none !important
-            }
-
-            @page {
-                size: a3
-            }
-
-            body {
-                min-width: 992px !important
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="styles.f067c9735fd601fcc7ed.css" media="all" onload="this.media='all'"><noscript>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles.f067c9735fd601fcc7ed.css" media="all" onload="this.media='all'">
+    <noscript>
         <link rel="stylesheet" href="styles.f067c9735fd601fcc7ed.css">
     </noscript>
-    <style>
-        .SearchTeachers .mat-progress-spinner.mat-progress-spinner-indeterminate-animation {
-            width: 50px !important;
-            height: 50px !important;
-            outline: none
-        }
-
-        .SearchTeachers .mat-progress-spinner.mat-progress-spinner-indeterminate-animation svg {
-            width: 50px !important;
-            height: 50px !important
-        }
-
-        .SearchTeachers .mat-progress-spinner circle,
-        .SearchTeachers .mat-spinner circle {
-            stroke: #2a76e8
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] {
-            padding: 80px 0 40px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .SearchBar[_ngcontent-jby-c172] {
-            position: relative;
-            border: solid #e5e9eb 1px;
-            width: 100%;
-            max-width: 730px;
-            height: 49px;
-            border-radius: 6px;
-            padding: 10px;
-            box-shadow: 0 13px 35px #9aafba40
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .SearchBar[_ngcontent-jby-c172] .Search[_ngcontent-jby-c172] {
-            margin-top: -10px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .SearchBar[_ngcontent-jby-c172] .Search[_ngcontent-jby-c172] input[_ngcontent-jby-c172] {
-            width: calc(100% - 80px);
-            height: 47px;
-            border: none;
-            outline: none
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .SearchBar[_ngcontent-jby-c172] .Filter[_ngcontent-jby-c172] {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 60px;
-            position: absolute;
-            right: 20px;
-            top: 0;
-            height: 47px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .SearchBar[_ngcontent-jby-c172] .Filter[_ngcontent-jby-c172] img[_ngcontent-jby-c172] {
-            cursor: pointer
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            border: solid #e5e9eb 1px;
-            width: 730px;
-            border-radius: 6px;
-            box-shadow: 0 13px 35px #9aafba40;
-            background-color: #fff;
-            margin: 20px 0 0;
-            padding: 25px;
-            z-index: 1
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .heading[_ngcontent-jby-c172] {
-            margin-bottom: 20px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .FormFields[_ngcontent-jby-c172] .form-group[_ngcontent-jby-c172] {
-            margin: 0;
-            max-width: 350px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .FormFields[_ngcontent-jby-c172] .form-group[_ngcontent-jby-c172] .form-control[_ngcontent-jby-c172] {
-            height: 43px;
-            font-family: "Raleway";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            border: 1px solid #e5e9eb
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .FormFields[_ngcontent-jby-c172] .form-group[_ngcontent-jby-c172] .form-control[_ngcontent-jby-c172]:focus {
-            box-shadow: none;
-            border-color: unset;
-            border: 1px solid #ced4da
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .FormFields[_ngcontent-jby-c172] .form-group[_ngcontent-jby-c172] textarea[_ngcontent-jby-c172] {
-            height: unset !important
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .FormFields[_ngcontent-jby-c172] .form-check[_ngcontent-jby-c172] {
-            margin: 5px 0
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .FormFields[_ngcontent-jby-c172] .RadioButtonSection[_ngcontent-jby-c172] {
-            display: flex
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .FormFields[_ngcontent-jby-c172] .RadioButton[_ngcontent-jby-c172] {
-            width: 100%;
-            margin-top: 10px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .FormFields[_ngcontent-jby-c172] .RadioButton[_ngcontent-jby-c172] label[_ngcontent-jby-c172] {
-            margin: 0 0 5x
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .Buttons[_ngcontent-jby-c172] {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .Buttons[_ngcontent-jby-c172] .Reset[_ngcontent-jby-c172] {
-            margin-right: 32px;
-            font-family: "Raleway";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 16px;
-            color: #2a76e8;
-            text-decoration: underline;
-            cursor: pointer
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .Buttons[_ngcontent-jby-c172] button[_ngcontent-jby-c172] {
-            font-family: "Raleway";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            border-radius: 4px;
-            background-color: #2a76e8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 5px 15px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] .Buttons[_ngcontent-jby-c172] button[_ngcontent-jby-c172]:focus {
-            box-shadow: none;
-            border-color: unset
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .AppliedFilter[_ngcontent-jby-c172] {
-            display: flex;
-            margin: 40px 0 -10px;
-            flex-wrap: wrap
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .AppliedFilter[_ngcontent-jby-c172] .FilterHeading[_ngcontent-jby-c172] {
-            display: flex;
-            align-items: center
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .AppliedFilter[_ngcontent-jby-c172] .FilterHeading[_ngcontent-jby-c172] p[_ngcontent-jby-c172] {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 18.4px;
-            font-family: "Raleway";
-            margin: 0 !important
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .AppliedFilter[_ngcontent-jby-c172] .LangFilter[_ngcontent-jby-c172] {
-            border-radius: 168px;
-            background-color: #f6f9fe;
-            border: #bdd4f7 solid 1px;
-            padding: 8px 25px;
-            font-family: "Raleway";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 18px;
-            display: flex;
-            flex-wrap: wrap;
-            height: -moz-fit-content;
-            height: fit-content;
-            margin: 10px 0 10px 30px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .AppliedFilter[_ngcontent-jby-c172] .LangFilter[_ngcontent-jby-c172] div[_ngcontent-jby-c172] {
-            margin-bottom: 3px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .AppliedFilter[_ngcontent-jby-c172] .ClearFilter[_ngcontent-jby-c172] {
-            display: flex;
-            align-items: center;
-            margin-left: 24px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .AppliedFilter[_ngcontent-jby-c172] .ClearFilter[_ngcontent-jby-c172] p[_ngcontent-jby-c172] {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 16.4px;
-            text-decoration: underline;
-            color: #2a76e8;
-            cursor: pointer;
-            margin: 0
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .SortBy[_ngcontent-jby-c172] {
-            margin-top: 40px;
-            display: flex;
-            width: 180px;
-            justify-content: space-between
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .SortBy[_ngcontent-jby-c172] .SortByHeading[_ngcontent-jby-c172] p[_ngcontent-jby-c172] {
-            font-size: 12;
-            font-weight: 400;
-            font-family: " Raleway"
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .SortBy[_ngcontent-jby-c172] .Menu[_ngcontent-jby-c172] i[_ngcontent-jby-c172] {
-            width: 120px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] {
-            padding: 40px 0 10px;
-            display: flex;
-            flex-wrap: wrap
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] {
-            background-color: #f8f8f8;
-            border: solid #e5e9eb 1px;
-            width: 250px;
-            min-height: 315px;
-            padding: 30px 0 10px;
-            text-align: center;
-            margin: 10px 40px 20px 0;
-            border-radius: 12px;
-            cursor: pointer;
-            position: relative
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .Menu[_ngcontent-jby-c172] {
-            position: absolute;
-            right: 13px;
-            top: 10px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .TeacherImg[_ngcontent-jby-c172] {
-            padding-bottom: 20px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .TeacherImg[_ngcontent-jby-c172] img[_ngcontent-jby-c172] {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 84px;
-            height: 84px;
-            object-fit: cover;
-            border-radius: 100%
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .TeacherDescription[_ngcontent-jby-c172] {
-            text-align: center
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .TeacherDescription[_ngcontent-jby-c172] h2[_ngcontent-jby-c172] {
-            font-size: 22px;
-            font-family: "Raleway";
-            font-weight: 600;
-            line-height: 25.83px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .TeacherDescription[_ngcontent-jby-c172] p[_ngcontent-jby-c172] {
-            font-size: 12px;
-            font-family: "Raleway";
-            font-weight: 400;
-            line-height: 1.2;
-            width: 150px;
-            margin: 0 auto 5px;
-            height: 30px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .RatingAndPrice[_ngcontent-jby-c172] {
-            border-bottom: solid #e5e9eb 1px;
-            border-top: solid #e5e9eb 1px;
-            display: flex;
-            align-items: center;
-            font-family: "Raleway";
-            justify-content: center;
-            margin: 0 15px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .RatingAndPrice[_ngcontent-jby-c172] .Rating[_ngcontent-jby-c172] {
-            display: flex;
-            align-items: center
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .RatingAndPrice[_ngcontent-jby-c172] .Rating[_ngcontent-jby-c172] p[_ngcontent-jby-c172] {
-            padding: 15px 0 0 4px;
-            font-size: 12px;
-            font-family: "Raleway";
-            font-weight: 400
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .RatingAndPrice[_ngcontent-jby-c172] img[_ngcontent-jby-c172] {
-            opacity: .4
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .RatingAndPrice[_ngcontent-jby-c172] .Price[_ngcontent-jby-c172] {
-            display: flex;
-            align-items: center;
-            padding-left: 24px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .RatingAndPrice[_ngcontent-jby-c172] .Price[_ngcontent-jby-c172] p[_ngcontent-jby-c172] {
-            padding: 15px 0 0 4px;
-            font-size: 12px;
-            font-family: "Raleway";
-            font-weight: 400
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .HireTeacher[_ngcontent-jby-c172] {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 10px 0;
-            position: relative
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .HireTeacher[_ngcontent-jby-c172] .HireBtn[_ngcontent-jby-c172] {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            align-items: center
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .HireTeacher[_ngcontent-jby-c172] .HireBtn[_ngcontent-jby-c172] button[_ngcontent-jby-c172] {
-            width: 57px;
-            height: 29px;
-            color: #fff;
-            font-family: "Raleway";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            border-radius: 4px;
-            background-color: #2a76e8;
-            padding: 0
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .HireTeacher[_ngcontent-jby-c172] .HireBtn[_ngcontent-jby-c172] button[_ngcontent-jby-c172]:focus {
-            box-shadow: none;
-            border-color: unset
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .HireTeacher[_ngcontent-jby-c172] .HeartImg[_ngcontent-jby-c172] {
-            position: absolute;
-            right: 16px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .HireTeacher[_ngcontent-jby-c172] .HeartImg[_ngcontent-jby-c172] img[_ngcontent-jby-c172] {
-            cursor: pointer
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .ShowMore[_ngcontent-jby-c172] {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 0 20px
-        }
-
-        .SearchTeachers[_ngcontent-jby-c172] .ShowMore[_ngcontent-jby-c172] .btn[_ngcontent-jby-c172] {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center
-        }
-
-        @media (max-width: 767px) {
-            .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] {
-                flex-wrap: wrap;
-                justify-content: center
-            }
-
-            .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] {
-                width: 220px;
-                margin: 10px
-            }
-
-            .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .TeacherDescription[_ngcontent-jby-c172] h2[_ngcontent-jby-c172] {
-                font-size: 16px
-            }
-
-            .SearchTeachers[_ngcontent-jby-c172] .TeacherJobCards[_ngcontent-jby-c172] .JobCardsDetails[_ngcontent-jby-c172] .RatingAndPrice[_ngcontent-jby-c172] .Price[_ngcontent-jby-c172] p[_ngcontent-jby-c172] {
-                font-size: 11px
-            }
-
-            .SearchTeachers[_ngcontent-jby-c172] .FilterMenu[_ngcontent-jby-c172] {
-                position: relative;
-                max-width: 730px;
-                width: 100%
-            }
-
-            .SearchTeachers[_ngcontent-jby-c172] .AppliedFilter[_ngcontent-jby-c172] {
-                flex-wrap: wrap
-            }
-
-            .SearchTeachers[_ngcontent-jby-c172] .AppliedFilter[_ngcontent-jby-c172] .LangFilter[_ngcontent-jby-c172] {
-                margin: 5px 0 5px 30px;
-                flex-wrap: wrap
-            }
-
-            .SearchTeachers[_ngcontent-jby-c172] .AppliedFilter[_ngcontent-jby-c172] .LangFilter[_ngcontent-jby-c172] div[_ngcontent-jby-c172] {
-                margin-bottom: 3px
-            }
-        }
-
-        .SearchTeachers {
-            font-family: "Raleway"
-        }
-
-        .SearchTeachers .swal2-styled.swal2-confirm {
-            background-color: #2a76e8
-        }
-
-        .SearchTeachers .ng-dropdown-panel.ng-select-bottom {
-            top: 100% !important
-        }
-
-        .SearchTeachers .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder {
-            top: 12px
-        }
-
-        .SearchTeachers .ng-select .ng-select-container:after {
-            border-bottom: 0
-        }
-
-        .SearchTeachers .ng-select .ng-select-container .ng-value-container .ng-placeholder {
-            color: #fff
-        }
-
-        .SearchTeachers .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder {
-            display: none
-        }
-
-        .SearchTeachers .ng-select .ng-select-container {
-            min-height: 43px;
-            font-family: "Raleway";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            border: 1px solid #e5e9eb;
-            background-color: unset
-        }
-
-        .SearchTeachers .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
-            color: #000;
-            background-color: #f6f9fe;
-            border: 1px solid #bdd4f7;
-            padding-left: 0;
-            margin: 0 .4375em .4375em 0
-        }
-
-        .SearchTeachers .ng-select .ng-clear-wrapper {
-            margin-top: -8px
-        }
-
-        .SearchTeachers .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon {
-            color: #0000008a
-        }
-
-        .SearchTeachers .ng-select.ng-select-multiple .ng-select-container.ng-has-value .ng-value-container {
-            margin-top: -6px
-        }
-
-        @media (min-width: 1370px) {
-            .container[_ngcontent-jby-c172] {
-                max-width: 1366px
-            }
-        }
-    </style>
-    <style>
-        app-progressbar {
-            width: 100%;
-            position: absolute;
-            top: 100px;
-            left: 0
-        }
-
-        .mat-progress-bar-buffer {
-            background-color: #e6e6e6
-        }
-
-        .mat-progress-bar-fill:after {
-            background-color: #2a76e8
-        }
-
-        @media only screen and (max-width: 900px) {
-            app-progressbar {
-                left: 0;
-                width: 100%
-            }
-        }
-    </style>
-    <style>
-        .mat-progress-bar {
-            display: block;
-            height: 4px;
-            overflow: hidden;
-            position: relative;
-            transition: opacity 250ms linear;
-            width: 100%
-        }
-
-        ._mat-animation-noopable.mat-progress-bar {
-            transition: none;
-            animation: none
-        }
-
-        .mat-progress-bar .mat-progress-bar-element,
-        .mat-progress-bar .mat-progress-bar-fill::after {
-            height: 100%;
-            position: absolute;
-            width: 100%
-        }
-
-        .mat-progress-bar .mat-progress-bar-background {
-            width: calc(100% + 10px)
-        }
-
-        .cdk-high-contrast-active .mat-progress-bar .mat-progress-bar-background {
-            display: none
-        }
-
-        .mat-progress-bar .mat-progress-bar-buffer {
-            transform-origin: top left;
-            transition: transform 250ms ease
-        }
-
-        .cdk-high-contrast-active .mat-progress-bar .mat-progress-bar-buffer {
-            border-top: solid 5px;
-            opacity: .5
-        }
-
-        .mat-progress-bar .mat-progress-bar-secondary {
-            display: none
-        }
-
-        .mat-progress-bar .mat-progress-bar-fill {
-            animation: none;
-            transform-origin: top left;
-            transition: transform 250ms ease
-        }
-
-        .cdk-high-contrast-active .mat-progress-bar .mat-progress-bar-fill {
-            border-top: solid 4px
-        }
-
-        .mat-progress-bar .mat-progress-bar-fill::after {
-            animation: none;
-            content: "";
-            display: inline-block;
-            left: 0
-        }
-
-        .mat-progress-bar[dir=rtl],
-        [dir=rtl] .mat-progress-bar {
-            transform: rotateY(180deg)
-        }
-
-        .mat-progress-bar[mode=query] {
-            transform: rotateZ(180deg)
-        }
-
-        .mat-progress-bar[mode=query][dir=rtl],
-        [dir=rtl] .mat-progress-bar[mode=query] {
-            transform: rotateZ(180deg) rotateY(180deg)
-        }
-
-        .mat-progress-bar[mode=indeterminate] .mat-progress-bar-fill,
-        .mat-progress-bar[mode=query] .mat-progress-bar-fill {
-            transition: none
-        }
-
-        .mat-progress-bar[mode=indeterminate] .mat-progress-bar-primary,
-        .mat-progress-bar[mode=query] .mat-progress-bar-primary {
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            animation: mat-progress-bar-primary-indeterminate-translate 2000ms infinite linear;
-            left: -145.166611%
-        }
-
-        .mat-progress-bar[mode=indeterminate] .mat-progress-bar-primary.mat-progress-bar-fill::after,
-        .mat-progress-bar[mode=query] .mat-progress-bar-primary.mat-progress-bar-fill::after {
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            animation: mat-progress-bar-primary-indeterminate-scale 2000ms infinite linear
-        }
-
-        .mat-progress-bar[mode=indeterminate] .mat-progress-bar-secondary,
-        .mat-progress-bar[mode=query] .mat-progress-bar-secondary {
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            animation: mat-progress-bar-secondary-indeterminate-translate 2000ms infinite linear;
-            left: -54.888891%;
-            display: block
-        }
-
-        .mat-progress-bar[mode=indeterminate] .mat-progress-bar-secondary.mat-progress-bar-fill::after,
-        .mat-progress-bar[mode=query] .mat-progress-bar-secondary.mat-progress-bar-fill::after {
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            animation: mat-progress-bar-secondary-indeterminate-scale 2000ms infinite linear
-        }
-
-        .mat-progress-bar[mode=buffer] .mat-progress-bar-background {
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            animation: mat-progress-bar-background-scroll 250ms infinite linear;
-            display: block
-        }
-
-        .mat-progress-bar._mat-animation-noopable .mat-progress-bar-fill,
-        .mat-progress-bar._mat-animation-noopable .mat-progress-bar-fill::after,
-        .mat-progress-bar._mat-animation-noopable .mat-progress-bar-buffer,
-        .mat-progress-bar._mat-animation-noopable .mat-progress-bar-primary,
-        .mat-progress-bar._mat-animation-noopable .mat-progress-bar-primary.mat-progress-bar-fill::after,
-        .mat-progress-bar._mat-animation-noopable .mat-progress-bar-secondary,
-        .mat-progress-bar._mat-animation-noopable .mat-progress-bar-secondary.mat-progress-bar-fill::after,
-        .mat-progress-bar._mat-animation-noopable .mat-progress-bar-background {
-            animation: none;
-            transition-duration: 1ms
-        }
-
-        @keyframes mat-progress-bar-primary-indeterminate-translate {
-            0% {
-                transform: translateX(0)
-            }
-
-            20% {
-                animation-timing-function: cubic-bezier(0.5, 0, 0.701732, 0.495819);
-                transform: translateX(0)
-            }
-
-            59.15% {
-                animation-timing-function: cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);
-                transform: translateX(83.67142%)
-            }
-
-            100% {
-                transform: translateX(200.611057%)
-            }
-        }
-
-        @keyframes mat-progress-bar-primary-indeterminate-scale {
-            0% {
-                transform: scaleX(0.08)
-            }
-
-            36.65% {
-                animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1);
-                transform: scaleX(0.08)
-            }
-
-            69.15% {
-                animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1);
-                transform: scaleX(0.661479)
-            }
-
-            100% {
-                transform: scaleX(0.08)
-            }
-        }
-
-        @keyframes mat-progress-bar-secondary-indeterminate-translate {
-            0% {
-                animation-timing-function: cubic-bezier(0.15, 0, 0.515058, 0.409685);
-                transform: translateX(0)
-            }
-
-            25% {
-                animation-timing-function: cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);
-                transform: translateX(37.651913%)
-            }
-
-            48.35% {
-                animation-timing-function: cubic-bezier(0.4, 0.627035, 0.6, 0.902026);
-                transform: translateX(84.386165%)
-            }
-
-            100% {
-                transform: translateX(160.277782%)
-            }
-        }
-
-        @keyframes mat-progress-bar-secondary-indeterminate-scale {
-            0% {
-                animation-timing-function: cubic-bezier(0.15, 0, 0.515058, 0.409685);
-                transform: scaleX(0.08)
-            }
-
-            19.15% {
-                animation-timing-function: cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);
-                transform: scaleX(0.457104)
-            }
-
-            44.15% {
-                animation-timing-function: cubic-bezier(0.4, 0.627035, 0.6, 0.902026);
-                transform: scaleX(0.72796)
-            }
-
-            100% {
-                transform: scaleX(0.08)
-            }
-        }
-
-        @keyframes mat-progress-bar-background-scroll {
-            to {
-                transform: translateX(-8px)
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="find-teachers.css">
 </head>
 
 <body class="mat-typography" data-new-gr-c-s-check-loaded="14.1102.0" data-gr-ext-installed="">
-    <app-root _nghost-jby-c30="" ng-version="12.2.16"><router-outlet _ngcontent-jby-c30=""></router-outlet><app-template
-            _nghost-jby-c176="" class="ng-star-inserted"><app-header _ngcontent-jby-c176="" _nghost-jby-c175="">
-                <div _ngcontent-jby-c175="" class="Header">
-                    <div _ngcontent-jby-c175="" class="container">
-                        <div _ngcontent-jby-c175="" class="InnerHeader">
-                            <div _ngcontent-jby-c175="" routerlink="/" class="Logo" tabindex="0"><img
-                                    _ngcontent-jby-c175="" src="../../../assets/logo/logo.png" alt="logo"></div>
-                            <div _ngcontent-jby-c175="" class="Navigation">
-                                <div _ngcontent-jby-c175="" class="Item" tabindex="0"> Home </div>
-                                <div _ngcontent-jby-c175="" class="d-flex ng-star-inserted">
-                                    <div _ngcontent-jby-c175="" class="Item ng-star-inserted" tabindex="0"> Find
-                                        teachers</div><!---->
-                                </div><!---->
-                                <div _ngcontent-jby-c175="" class="d-flex ng-star-inserted">
-                                    <div _ngcontent-jby-c175="" class="Item ng-star-inserted" tabindex="0"> Find jobs
-                                    </div><!---->
-                                </div><!---->
-                                <div _ngcontent-jby-c175="" class="Item ng-star-inserted" tabindex="0">Resources</div>
-                                <div _ngcontent-jby-c175="" class="Item ng-star-inserted" tabindex="0">Contact us</div>
-                                <div _ngcontent-jby-c175="" class="Item ng-star-inserted" tabindex="0">Faqs</div>
-                                <!----><!----><!----><!---->
-                                <div _ngcontent-jby-c175="" class="Item ng-star-inserted">Login</div><!---->
-                                <div _ngcontent-jby-c175="" class="Item ng-star-inserted">Signup</div><!---->
-                            </div>
-                            <div _ngcontent-jby-c175="" data-toggle="collapse" data-target="#collaspeNavigation"
-                                aria-expanded="false" aria-controls="collaspeNavigation" class="HumburgerIcon"><img
-                                    _ngcontent-jby-c175="" src="../../../assets/icons/header-icon.JPG" alt="icon"></div>
+    <div class="Header">
+        <div class="container">
+            <div class="InnerHeader">
+                <div routerlink="/" class="Logo" tabindex="0">
+                    <img src="../../../assets/logo/logo.png" alt="logo">
+                </div>
+                <div class="Navigation">
+                    <div class="Item" tabindex="0">
+                        <a class="nav-element" href="index.html"> Home </a>
+                    </div>
+                    <div class="d-flex">
+                        <div class="Item" tabindex="0">
+                            <a class="nav-element" href="find-teachers.html"> Find teachers </a>
                         </div>
                     </div>
-                </div><mat-menu _ngcontent-jby-c175=""
-                    class="ng-tns-c125-0 ng-star-inserted"><!----></mat-menu><mat-menu _ngcontent-jby-c175=""
-                    class="ng-tns-c125-1 ng-star-inserted"><!----></mat-menu><mat-menu _ngcontent-jby-c175=""
-                    class="ng-tns-c125-2 ng-star-inserted"><!----></mat-menu>
-                <div _ngcontent-jby-c175="" class="HamburgerListMenu">
-                    <div _ngcontent-jby-c175="" id="collaspeNavigation" class="collapse">
-                        <div _ngcontent-jby-c175="" class="Card Card-body">
-                            <div _ngcontent-jby-c175="" class="Nav">
-                                <div _ngcontent-jby-c175="" data-toggle="collapse" data-target="#collaspeNavigation"
-                                    class="Item" tabindex="0"> Home </div>
-                                <div _ngcontent-jby-c175="" class="d-flex ng-star-inserted">
-                                    <div _ngcontent-jby-c175="" data-toggle="collapse" data-target="#collaspeNavigation"
-                                        class="Item ng-star-inserted" tabindex="0"> Find teachers</div><!---->
-                                </div><!---->
-                                <div _ngcontent-jby-c175="" class="d-flex ng-star-inserted">
-                                    <div _ngcontent-jby-c175="" data-toggle="collapse" data-target="#collaspeNavigation"
-                                        class="Item ng-star-inserted" tabindex="0"> Find jobs</div><!---->
-                                </div><!---->
-                                <div _ngcontent-jby-c175="" data-toggle="collapse" data-target="#collaspeNavigation"
-                                    class="Item ng-star-inserted" tabindex="0">Resources</div>
-                                <div _ngcontent-jby-c175="" data-toggle="collapse" data-target="#collaspeNavigation"
-                                    class="Item ng-star-inserted" tabindex="0">Contact us</div>
-                                <div _ngcontent-jby-c175="" data-toggle="collapse" data-target="#collaspeNavigation"
-                                    class="Item ng-star-inserted" tabindex="0">Faqs</div><!----><!----><!----><!---->
-                                <div _ngcontent-jby-c175="" data-toggle="collapse" data-target="#collaspeNavigation"
-                                    class="Item ng-star-inserted">Login</div><!---->
-                                <div _ngcontent-jby-c175="" data-toggle="collapse" data-target="#collaspeNavigation"
-                                    class="Item ng-star-inserted">Signup</div><!---->
-                            </div>
+                    <div class="d-flex">
+                        <div class="Item" tabindex="0">
+                            <a class="nav-element" href="find-jobs.html"> Find Jobs </a>
+                        </div>
+                    </div>
+                    <div class="Item" tabindex="0">
+                        <a class="nav-element" href="resources.html"> Resources </a>
+                    </div>
+                    <div class="Item" tabindex="0">
+                        <a class="nav-element" href="contact.html"> Contact us </a>
+                    </div>
+                    <div class="Item" tabindex="0">
+                        <a class="nav-element" href="faqs.html"> Faqs </a>
+                    </div>
+                    
+                    <div class="Item"> 
+                        <a class="nav-element" href="login.html"> Login </a>
+                        </div>
+                    <div class="Item">                        
+                        <a class="nav-element" href="signup.html"> Signup</a>
+                    </div>
+                </div>
+                <div data-toggle="collapse" data-target="#collaspeNavigation" aria-expanded="false"
+                    aria-controls="collaspeNavigation" class="HumburgerIcon"><img
+                        src="../../../assets/icons/header-icon.JPG" alt="icon"></div>
+            </div>
+        </div>
+    </div>
+    <div class="HamburgerListMenu">
+        <div id="collaspeNavigation" class="collapse">
+            <div class="Card Card-body">
+                <div class="Nav">
+                    <div data-toggle="collapse" data-target="#collaspeNavigation" class="Item" tabindex="0">
+                        <a class="nav-element" href="index.html"> Home </a>
+                    </div>
+                    <div class="d-flex">
+                        <div data-toggle="collapse" data-target="#collaspeNavigation" class="Item" tabindex="0">
+                            <a class="nav-element" href="find-teachers.html"> Find teachers </a>
+                        </div>
+                    </div>
+                    </a>
+                    
+                    <div class="d-flex">
+                        <div data-toggle="collapse" data-target="#collaspeNavigation" class="Item" tabindex="0">
+                            <a class="nav-element" href="find-jobs.html"> Find Jobs </a>
+                        </div>
+                    </div>
+                    <div data-toggle="collapse" data-target="#collaspeNavigation" class="Item" tabindex="0">
+                        <a class="nav-element" href="resources.html"> Resources </a>
+                    </div>
+                    <div data-toggle="collapse" data-target="#collaspeNavigation" class="Item" tabindex="0">
+                        <a class="nav-element" href="contact.html"> Contact us </a>
+                    </div>
+                    <div data-toggle="collapse" data-target="#collaspeNavigation" class="Item" tabindex="0">
+                        <a class="nav-element" href="faqs.html"> Faqs </a>
+                    </div>
+                    
+                    <div data-toggle="collapse" data-target="#collaspeNavigation" class="Item">
+                        <a class="nav-element" href="login.html"> Login </a>
+                    </div>
+                    <div data-toggle="collapse" data-target="#collaspeNavigation" class="Item">
+                        <a class="nav-element" href="signup.html"> Signup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="SearchTeachers">
+        <div class="container">
+            <div class="SearchBar">
+                <div class="Search"><input type="search"
+                        placeholder="Search teachers, countries, qualifications and keywords"></div>
+                <div class="Filter"><img src="../../../assets/icons/filter.png" alt="icon"><img
+                        src="../../../assets/icons/search.png" alt="icon"></div>
+            </div>
+            <div class="TeacherJobCards">
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1678225861308-1621540850035.JPEG"></div>
+                    <div class="TeacherDescription">
+                        <h2>Qari Nadir khan </h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $50</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
                         </div>
                     </div>
                 </div>
-            </app-header>
-            <div _ngcontent-jby-c176=""><router-outlet _ngcontent-jby-c176=""></router-outlet><app-find-teachers
-                    _nghost-jby-c172="" class="ng-star-inserted"><!---->
-                    <div _ngcontent-jby-c172="" class="SearchTeachers">
-                        <div _ngcontent-jby-c172="" class="container">
-                            <div _ngcontent-jby-c172="" class="SearchBar">
-                                <div _ngcontent-jby-c172="" class="Search"><input _ngcontent-jby-c172="" type="search"
-                                        placeholder="Search teachers, countries, qualifications and keywords"></div>
-                                <div _ngcontent-jby-c172="" class="Filter"><img _ngcontent-jby-c172=""
-                                        src="../../../assets/icons/filter.png" alt="icon"><img _ngcontent-jby-c172=""
-                                        src="../../../assets/icons/search.png" alt="icon"></div>
-                            </div><!----><!---->
-                            <div _ngcontent-jby-c172="" class="TeacherJobCards">
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1678225861308-1621540850035.JPEG"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">Qari Nadir khan </h2>
-                                        <p _ngcontent-jby-c172="" class="ng-star-inserted"><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">Urdu</span><!----></span><!----></p><!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $50</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1679214408951-4DA7916A-CBD2-479A-8518-01316E5525F4.jpeg">
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">Qari Uwais Ajmal</h2>
-                                        <p _ngcontent-jby-c172="" class="ng-star-inserted"><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span _ngcontent-jby-c172="">Urdu</span><span
-                                                    _ngcontent-jby-c172="" class="ng-star-inserted"> /
-                                                </span><!----></span><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">English</span><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted"> / </span><!----></span><span
-                                                _ngcontent-jby-c172="" class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">Arabic</span><!----></span><!----></p><!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $20</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1671263915095-InShot_20221208_193210584.jpg">
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">Muhammad Zuhair</h2><!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $20</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1660536367556-IMG_20181004_19495889.jpg">
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">Rukhsana Ashraf</h2>
-                                        <p _ngcontent-jby-c172="" class="ng-star-inserted"><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span _ngcontent-jby-c172="">Urdu</span><span
-                                                    _ngcontent-jby-c172="" class="ng-star-inserted"> /
-                                                </span><!----></span><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span _ngcontent-jby-c172="">Arabic</span><span
-                                                    _ngcontent-jby-c172="" class="ng-star-inserted"> /
-                                                </span><!----></span><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">English</span><!----></span><!----></p>
-                                        <!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $50</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1660764032674-IMG_20220818_002006.jpg"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">Humaira Mahmood</h2>
-                                        <p _ngcontent-jby-c172="" class="ng-star-inserted"><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">Urdu</span><!----></span><!----></p><!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $45</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1672068084770-Snapchat-367122018_1.jpg"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">zeeshan sharif</h2><!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $50</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1676899776829-image-removebg-preview-(4).png">
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">mohsin khan</h2>
-                                        <p _ngcontent-jby-c172="" class="ng-star-inserted"><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">Urdu</span><!----></span><!----></p><!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $50</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1663214092833-FB_IMG_1630680816172.jpg"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">Aman Ullah </h2>
-                                        <p _ngcontent-jby-c172="" class="ng-star-inserted"><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span _ngcontent-jby-c172="">Urdu</span><span
-                                                    _ngcontent-jby-c172="" class="ng-star-inserted"> /
-                                                </span><!----></span><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span _ngcontent-jby-c172="">Arabic</span><span
-                                                    _ngcontent-jby-c172="" class="ng-star-inserted"> /
-                                                </span><!----></span><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">English</span><!----></span><!----></p>
-                                        <!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $30</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1674537116073-Screenshot_20230124-101117_WhatsApp.jpg">
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">Hajrah Nabeel </h2>
-                                        <p _ngcontent-jby-c172="" class="ng-star-inserted"><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">English</span><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted"> / </span><!----></span><span
-                                                _ngcontent-jby-c172="" class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">Urdu</span><!----></span><!----></p><!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $25</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1667183865570-IMG_20221011_060749467.jpg">
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">Muhammad Usama Abdullah</h2>
-                                        <p _ngcontent-jby-c172="" class="ng-star-inserted"><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span _ngcontent-jby-c172="">Urdu</span><span
-                                                    _ngcontent-jby-c172="" class="ng-star-inserted"> /
-                                                </span><!----></span><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">English</span><!----></span><!----></p>
-                                        <!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $60</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1678020929327-received_1407156336417828.jpeg">
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">Hafiz ubaid ur Rehman </h2>
-                                        <p _ngcontent-jby-c172="" class="ng-star-inserted"><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span _ngcontent-jby-c172="">Pashto</span><span
-                                                    _ngcontent-jby-c172="" class="ng-star-inserted"> /
-                                                </span><!----></span><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">Urdu</span><!----></span><!----></p><!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $50</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div>
-                                <div _ngcontent-jby-c172="" class="JobCardsDetails ng-star-inserted">
-                                    <div _ngcontent-jby-c172="" class="Menu"><img _ngcontent-jby-c172=""
-                                            src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherImg"><img _ngcontent-jby-c172="" alt="img"
-                                            width="100%" onerror="src='../../../assets/cover/userIcon.png'"
-                                            src="https://qari.io/teachers/1673692823057-IMG_20230114_152218.jpg"></div>
-                                    <div _ngcontent-jby-c172="" class="TeacherDescription">
-                                        <h2 _ngcontent-jby-c172="">Qaria Nimra kousar </h2>
-                                        <p _ngcontent-jby-c172="" class="ng-star-inserted"><span _ngcontent-jby-c172=""
-                                                class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">English</span><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted"> / </span><!----></span><span
-                                                _ngcontent-jby-c172="" class="ng-star-inserted"><span
-                                                    _ngcontent-jby-c172="">Urdu</span><!----></span><!----></p><!---->
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="RatingAndPrice">
-                                        <div _ngcontent-jby-c172="" class="Rating"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/reviews.png" alt="icon">
-                                            <p _ngcontent-jby-c172=""> 0 </p>
-                                        </div>
-                                        <div _ngcontent-jby-c172="" class="Price"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/earnings.png" alt="icon">
-                                            <p _ngcontent-jby-c172="">Starting From $35</p>
-                                        </div>
-                                    </div>
-                                    <div _ngcontent-jby-c172="" class="HireTeacher">
-                                        <div _ngcontent-jby-c172="" class="HireBtn"><button _ngcontent-jby-c172=""
-                                                type="submit" class="btn btn-primary"><span _ngcontent-jby-c172=""
-                                                    class="ng-star-inserted">Hire </span><!----><!----></button></div>
-                                        <div _ngcontent-jby-c172="" class="HeartImg"><img _ngcontent-jby-c172=""
-                                                src="../../../assets/icons/heart.png" alt="icon"
-                                                class="ng-star-inserted"><!----><!----></div>
-                                    </div>
-                                </div><!---->
-                            </div>
-                            <div _ngcontent-jby-c172="" class="ShowMore">
-                                <div _ngcontent-jby-c172="" class="btn ng-star-inserted"><!----><span
-                                        _ngcontent-jby-c172="" class="ng-star-inserted">Show more</span><!----></div>
-                                <!---->
-                            </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1679214408951-4DA7916A-CBD2-479A-8518-01316E5525F4.jpeg">
+                    </div>
+                    <div class="TeacherDescription">
+                        <h2>Qari Uwais Ajmal</h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $20</p>
                         </div>
                     </div>
-                </app-find-teachers><!----></div>
-        </app-template><!----></app-root>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1671263915095-InShot_20221208_193210584.jpg">
+                    </div>
+                    <div class="TeacherDescription">
+                        <h2>Muhammad Zuhair</h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $20</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                            <span>Hire</span>
+                        </button></div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1660536367556-IMG_20181004_19495889.jpg">
+                    </div>
+                    <div class="TeacherDescription">
+                        <h2>Rukhsana Ashraf</h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>
+                        
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $50</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1660764032674-IMG_20220818_002006.jpg"></div>
+                    <div class="TeacherDescription">
+                        <h2>Humaira Mahmood</h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>    
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $45</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1672068084770-Snapchat-367122018_1.jpg"></div>
+                    <div class="TeacherDescription">
+                        <h2>zeeshan sharif</h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $50</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1676899776829-image-removebg-preview-(4).png">
+                    </div>
+                    <div class="TeacherDescription">
+                        <h2>mohsin khan</h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $50</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1663214092833-FB_IMG_1630680816172.jpg"></div>
+                    <div class="TeacherDescription">
+                        <h2>Aman Ullah </h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $30</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1674537116073-Screenshot_20230124-101117_WhatsApp.jpg">
+                    </div>
+                    <div class="TeacherDescription">
+                        <h2>Hajrah Nabeel </h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $25</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1667183865570-IMG_20221011_060749467.jpg">
+                    </div>
+                    <div class="TeacherDescription">
+                        <h2>Muhammad Usama Abdullah</h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $60</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1678020929327-received_1407156336417828.jpeg">
+                    </div>
+                    <div class="TeacherDescription">
+                        <h2>Hafiz ubaid ur Rehman </h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $50</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="JobCardsDetails">
+                    <div class="Menu"><img src="../../../../assets/icons/menu-icon.png" alt="menu"></div>
+                    <div class="TeacherImg"><img alt="img" width="100%"
+                            onerror="src='../../../assets/cover/userIcon.png'"
+                            src="https://qari.io/teachers/1673692823057-IMG_20230114_152218.jpg"></div>
+                    <div class="TeacherDescription">
+                        <h2>Qaria Nimra kousar </h2>
+                        <p>
+                            <span>
+                                <span>Urdu</span>
+                                <span> /</span>
+                            </span>
+                            <span>
+                                <span>English</span>
+                                <span> /</span>
+                            </span>
+                                <span>Arabic</span>
+                        </p>
+                    </div>
+                    <div class="RatingAndPrice">
+                        <div class="Rating"><img src="../../../assets/icons/reviews.png" alt="icon">
+                            <p> 0 </p>
+                        </div>
+                        <div class="Price"><img src="../../../assets/icons/earnings.png" alt="icon">
+                            <p>Starting From $35</p>
+                        </div>
+                    </div>
+                    <div class="HireTeacher">
+                        <div class="HireBtn">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Hire</span>
+                            </button>
+                        </div>
+                        <div class="HeartImg">
+                            <img src="../../../assets/icons/heart.png" alt="icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ShowMore">
+                <div class="btn"><span>Show more</span></div>
+                
+            </div>
+        </div>
+    </div>
+    </div>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQF4MK3" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -1390,13 +618,6 @@
     <script src="runtime.36c453222499a0ab7e5a.js" defer=""></script>
     <script src="polyfills.10f0ee604e086f42b0e4.js" defer=""></script>
     <script src="main.b60828141c9f4ef6a044.js" defer=""></script>
-
-    <iframe name="__privateStripeMetricsController4440" frameborder="0" allowtransparency="true" scrolling="no"
-        role="presentation" allow="payment *"
-        src="https://js.stripe.com/v3/m-outer-93afeeb17bc37e711759584dbfc50d47.html#url=https%3A%2F%2Fqari.io%2F&amp;title=Qari.io&amp;referrer=&amp;muid=614e6b2b-eb6d-4ac4-86af-a73cae63afd580b03b&amp;sid=d28c5cc8-83e7-403b-8fd8-72ab44ba1f0674efe6&amp;version=6&amp;preview=false"
-        aria-hidden="true" tabindex="-1"
-        style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe>
-    <div class="cdk-live-announcer-element cdk-visually-hidden" aria-atomic="true" aria-live="polite"></div>
-</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+</body>
 
 </html>
